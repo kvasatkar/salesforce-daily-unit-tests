@@ -2,8 +2,8 @@ name: Check Test Runs
 
 on:
   # This schedule should be X hours after the schedule-test-runs.yml, depending on how long your tests take to run. This is one is configured at 4 AM, 4 hours after the tests are scheduled. 
-  schedule:
-    - cron: '0 4 * * *'
+  #schedule:
+   # - cron: '0 4 * * *'
   workflow_dispatch:
 
 jobs:
@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        sf_org_alias: [INTEGRATION, UAT]
+        sf_org_alias: [LUIQA]
 
     env:
         ENVIRONMENT: ${{ matrix.sf_org_alias }}
@@ -68,7 +68,7 @@ jobs:
         # Slack channel id, channel name, or user id to post message.
         # See also: https://api.slack.com/methods/chat.postMessage#channels
         # You can pass in multiple channels to post to by providing a comma-delimited list of channel IDs.
-        channel-id: 'C062G1V3KKK'
+        channel-id: 'C06V77R1ZB4'
         # For posting a simple plain text message
         payload-file-path: "slackPayload.json"
       env:
@@ -87,7 +87,7 @@ jobs:
           # Slack channel id, channel name, or user id to post message.
           # See also: https://api.slack.com/methods/chat.postMessage#channels
           # You can pass in multiple channels to post to by providing a comma-delimited list of channel IDs.
-          channel-id: 'C062G1V3KKK'
+          channel-id: 'C06V77R1ZB4'
           # For posting a simple plain text message
           payload: |
             {
