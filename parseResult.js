@@ -19,15 +19,13 @@ if (firstPart) {
 
 let summaryText = '';
 
-let codecoverage = '';
+let codecoverage = ' The Overall Code Coverage of the (${hostname}) org is ${summary.orgWideCoverage} ';
 
 if(summary.outcome == 'Failed'){
-     summaryText = `❌   Automated unit testing for ${summary.username} (${hostname}) has *${summary.outcome}* with ${summary.testsRan} test runs and ${summary.failing} failure(s)`
-     codecoverage = ` The Overall Code Coverage of the (${hostname}) org is ${summary.orgWideCoverage} `   
+     summaryText = `❌   Automated unit testing for ${summary.username} (${hostname}) has *${summary.outcome}* with ${summary.testsRan} test runs and ${summary.failing} failure(s)` 
 }
 else{
-    summaryText = `✅   Automated unit testing for ${summary.username} (${hostname}) has *${summary.outcome}* 🎉 `
-    codecoverage = ` The Overall Code Coverage of the (${hostname}) org is ${summary.orgWideCoverage} `   
+    summaryText = `✅   Automated unit testing for ${summary.username} (${hostname}) has *${summary.outcome}* 🎉 `   
 }
 
 
