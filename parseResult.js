@@ -19,13 +19,11 @@ if (firstPart) {
 
 let summaryText = '';
 
-let codecoverage = ' The Overall Code Coverage of the (${hostname}) org is ${summary.orgWideCoverage} ';
-
 if(summary.outcome == 'Failed'){
-     summaryText = `❌   Automated unit testing for ${summary.username} (${hostname}) has *${summary.outcome}* with ${summary.testsRan} test runs and ${summary.failing} failure(s)` 
+     summaryText = `❌   Automated unit testing for ${summary.username} (${hostname}) has *${summary.outcome}* with ${summary.testsRan} test runs and ${summary.failing} failure(s)`
 }
 else{
-    summaryText = `✅   Automated unit testing for ${summary.username} (${hostname}) has *${summary.outcome}* 🎉 `   
+    summaryText = `✅   Automated unit testing for ${summary.username} (${hostname}) has *${summary.outcome}* 🎉 `
 }
 
 
@@ -36,17 +34,8 @@ let summaryBlock = {
         text: summaryText
     }
 }
+
 slackPayload.blocks.push(summaryBlock);
-
-let codecoverageBlock = {
-    type: 'section',
-    text: {
-        type: 'mrkdwn',
-        text: codecoverage
-    }
-}
-slackPayload.blocks.push(codecoverageBlock);
-
 
 for(const test of tests){
 
