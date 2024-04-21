@@ -41,7 +41,7 @@ jobs:
 
     - name: Run all tests and store test run Id
       run: |
-        sfdx apex run test --test-level RunLocalTests --result-format human -v > ./id.txt
+        sfdx apex run test --test-level RunLocalTests --detailed-coverage --code-coverage --result-format human -v > ./id.txt
         echo "$(node ./extractId.js)" > ${{ matrix.sf_org_alias }}_test_run_id.txt
 
     - name: Upload the test run Id as an artifact
