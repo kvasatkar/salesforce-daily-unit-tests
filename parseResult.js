@@ -19,11 +19,15 @@ if (firstPart) {
 
 let summaryText = '';
 
+let codecoverage = '';
+
 if(summary.outcome == 'Failed'){
      summaryText = `❌   Automated unit testing for ${summary.username} (${hostname}) has *${summary.outcome}* with ${summary.testsRan} test runs and ${summary.failing} failure(s)`
+     codecoverage = ` The Overall Code Coverage of the (${hostname}) org is ${summary.orgWideCoverage} `   
 }
 else{
     summaryText = `✅   Automated unit testing for ${summary.username} (${hostname}) has *${summary.outcome}* 🎉 `
+    codecoverage = ` The Overall Code Coverage of the (${hostname}) org is ${summary.orgWideCoverage} `   
 }
 
 
@@ -34,8 +38,17 @@ let summaryBlock = {
         text: summaryText
     }
 }
-
 slackPayload.blocks.push(summaryBlock);
+
+let codecoverageBlock = {
+    type: 'section',
+    text: {
+        type: 'mrkdwn',
+        text: codecoverage
+    }
+}
+slackPayload.blocks.push(codecoverageBlock);
+
 
 for(const test of tests){
 
