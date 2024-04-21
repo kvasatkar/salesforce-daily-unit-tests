@@ -37,7 +37,6 @@ let summaryBlock = {
         type: 'mrkdwn',
         text: summaryText
     },
-        {
     	"type": "section",
     	"block_id": "section567",
     	"text": {
@@ -45,7 +44,7 @@ let summaryBlock = {
     			text: codecoverage
     		    }
     	}
-}
+
 slackPayload.blocks.push(summaryBlock);
 
 
