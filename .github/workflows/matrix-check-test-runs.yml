@@ -58,6 +58,7 @@ jobs:
       run: |
         sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage --json || true
         sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage --json > result.json || true
+        cat result.json
         node parseResult.js 
 
 
