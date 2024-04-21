@@ -36,16 +36,18 @@ let summaryBlock = {
     text: {
         type: 'mrkdwn',
         text: summaryText
-    },
-    	"type": "section",
-    	"block_id": "section567",
-    	"text": {
-    			type: 'mrkdwn',
-    			text: codecoverage
-    		    }
-    	}
-
+    }
+}
 slackPayload.blocks.push(summaryBlock);
+
+let codecoverageBlock = {
+    type: 'section',
+    text: {
+        type: 'mrkdwn',
+        text: codecoverage
+    }
+}
+slackPayload.blocks.push(codecoverageBlock);
 
 
 for(const test of tests){
