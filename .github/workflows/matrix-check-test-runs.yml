@@ -56,9 +56,10 @@ jobs:
     # necessary so that we can send the notification
     - name: "Extract apex test results"
       run: |
-        sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage --json || true
-        sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage --json > result.json || true
-        node parseResult.js 
+        sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage || true
+        #sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage --json > result.json || true
+        #node parseResult.js 
+        sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage > result1.txt || true
 
 
     - name: Post to a Slack channel
