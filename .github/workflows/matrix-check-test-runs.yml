@@ -78,10 +78,4 @@ jobs:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }} 
 
 
-    - name: Upload attachment to slack 
-      uses: adrey/slack-file-upload-action@master
-      with:
-          token: ${{ secrets.SLACK_BOT_TOKEN }}
-          path: result1.txt
-          channel: C06V77R1ZB4
         
