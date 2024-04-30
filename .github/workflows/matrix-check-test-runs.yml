@@ -60,6 +60,7 @@ jobs:
         #sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage --json > result.json || true
         #node parseResult.js 
         sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage > result1.txt || true
+        cat result1.txt
 
 
     - name: Post to a Slack channel
