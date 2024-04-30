@@ -71,6 +71,7 @@ jobs:
         # See also: https://api.slack.com/methods/chat.postMessage#channels
         # You can pass in multiple channels to post to by providing a comma-delimited list of channel IDs.
         channel-id: 'C06V77R1ZB4'
+        path: result1.txt
         # For posting a simple plain text message
         payload-file-path: "slackPayload.json"
       env:
