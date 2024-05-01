@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        sf_org_alias: [RFA, FSL]
+        sf_org_alias: [RFA, LUIQA]
 
     env:
         ENVIRONMENT: ${{ matrix.sf_org_alias }}
