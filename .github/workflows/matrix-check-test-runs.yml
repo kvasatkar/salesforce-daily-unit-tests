@@ -59,7 +59,7 @@ jobs:
         sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage || true
         sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage --json > result.json || true
         node parseResult.js 
-        sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage > result1.txt || true
+        sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage > result1.pdf || true
         #cat result1.txt
 
 
@@ -80,7 +80,7 @@ jobs:
       uses: adrey/slack-file-upload-action@master
       with:
           token: ${{ secrets.SLACK_BOT_TOKEN }}
-          path: result1.txt
+          path: result1.pdf
           channel: C06V77R1ZB4
 
 
