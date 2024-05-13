@@ -64,7 +64,7 @@ jobs:
         sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage || true
         sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage --json > result.json || true
         node parseResult.js 
-        sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage > ${{ matrix.sf_org_alias }}_result.txt || true
+        sf apex get test -i ${{env.TEST_RUN_ID}} --code-coverage > ${{ matrix.sf_org_alias }}_${{ steps.date.outputs.date }}_result.txt || true
         #cat result1.txt
 
 
