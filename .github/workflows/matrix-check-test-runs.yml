@@ -40,6 +40,11 @@ jobs:
       id: date
       run: |
         echo "date=$(date +'%Y-%m-%d_T_%H:%M:%S')" >> $GITHUB_OUTPUT
+
+    - name: Set up Node.js 20
+      uses: actions/setup-node@v3
+      with:
+          node-version: 20    
     
     - name: "Install Salesforce CLI"
       run: |
