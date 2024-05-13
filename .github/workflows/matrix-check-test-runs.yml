@@ -39,7 +39,7 @@ jobs:
     - name: Current date and Time
       id: date
       run: |
-        echo "date=$(date +'%d-%m-%Y_T_%H:%M:%S')" >> $GITHUB_OUTPUT
+        echo "date=$(TZ=Asia/Kolkata date +'%d-%m-%Y_T_%H:%M:%S')" >> $GITHUB_OUTPUT
 
     - name: Set up Node.js 20
       uses: actions/setup-node@v3
