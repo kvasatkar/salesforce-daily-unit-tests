@@ -39,7 +39,7 @@ jobs:
     - name: Current date and Time
       id: date
       run: |
-        echo "date=$(date +'%Y-%m-%d_%H_%M_%S')" >> $GITHUB_OUTPUT
+        echo "date=$(date +'%Y-%m-%d_T_%H:%M:%S')" >> $GITHUB_OUTPUT
     
     - name: "Install Salesforce CLI"
       run: |
